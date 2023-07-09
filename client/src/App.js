@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import MenuOpener from './components/NavBar/MenuOpener';
+import Navbar from './components/NavBar/Navbar';
+import RouterConfig from './navigation/RouterConfig';
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      { (location.pathname !== '/' && location.pathname !== '/sign_up')
+        && (
+        <>
+          <MenuOpener open={open} toggleMenu={toggleMenu} />
+          <Navbar open={open} />
+        </>
+        )}
+      <RouterConfig />
     </div>
   );
 }

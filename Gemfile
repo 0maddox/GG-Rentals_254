@@ -1,51 +1,73 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby '2.7.4'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'rails', '~> 7.0.4'
+
 # Use postgresql as the database for Active Record
-gem 'sqlite3', '~> 1.4'
-# Use Puma as the app server
+gem 'pg', '~> 1.1'
+
+# Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+# gem "jbuilder"
+
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use Active Model has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-gem 'pg'
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+# gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.4', require: false
+gem 'bootsnap', require: false
+
+# Rubocop for linters check
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Use Devise for authentication and Devise JWT to authenticate using JWT methods
+gem 'devise'
+gem 'devise-jwt'
+
+# Use Cancancan for authorization
+gem 'cancancan'
+gem 'listen', '~> 3.7.0'
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
+# Imagekit for image uploads
+gem 'imagekitio'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
+
+# Use Active Model has_secure_password
+gem 'rswag'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+
+  # 'dotenv-rails' is for storing secret key in ENV file
+  gem 'dotenv-rails'
+
+  # Database Cleaner for keeping the test database clean
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails', '>= 5.0', '< 6.0'
+  gem 'webdrivers', '>= 5.0', '< 6.0'
 end
 
 group :development do
-  gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :development, :test do
-  gem 'rspec-rails', '~> 5.0.0'
-end
-
-group :test do
-  gem 'rspec-json_expectations'
-  gem 'shoulda-matchers', '~> 4.0'
-end
-
-gem "active_model_serializers", "~> 0.10.12"

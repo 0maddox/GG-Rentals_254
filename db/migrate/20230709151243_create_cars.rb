@@ -1,16 +1,19 @@
 class CreateCars < ActiveRecord::Migration[6.1]
   def change
-    create_table :cars do |t|
-      create_table :cars do |t|
-        t.string :name
-        t.string :car_type
-        t.string :brand
-        t.float :fee_per_day
-        t.string :color
-        t.string :image
-        t.boolean :rented
-
-      t.timestamps
+  
+    class CreateCars < ActiveRecord::Migration[6.1]
+      def change
+        create_table :cars do |t|
+          t.string :name
+          t.string :car_type
+          t.string :brand
+          t.string :color
+          t.string :image
+          t.float :fee_per_day
+          t.boolean :rented, default: false
+    
+          t.timestamps
+        end
+      end
     end
-  end
-end
+
