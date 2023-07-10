@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/Buttons/Loading';
-import CarDetail from '../../components/Cars/CarDetail';
+import CarDetail from '../../components/cars/CarDetail';
 import getCars from '../../redux/actions/Car/getCars';
 
 function Reservation() {

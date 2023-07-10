@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Loading from '../../components/Buttons/Loading';
-import CarCard from '../../components/Cars/CarCard';
+import CarCard from '../../components/cars/CarCard';
 import getCars from '../../redux/actions/Car/getCars';
 import getReservations from '../../redux/actions/Reservation/getReservation';
 
