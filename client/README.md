@@ -29,14 +29,14 @@ The following languages have been used on this project:
 
 ## Some Screenshots
 * Homepage/login page
-![login page](https://user-images.githubusercontent.com/83606182/206184765-b65d3d27-c722-4d1d-a461-54a2222cf3b6.png)
+![login page]()
 * Latest Model Cars
-![latest model](https://user-images.githubusercontent.com/83606182/206185210-7a83e214-af9f-4add-a399-a78461baeef3.png)
+![latest model]()
 * Reserve car
-![reaerve](https://user-images.githubusercontent.com/83606182/206185379-1443149f-980d-4146-9c09-ed044950e35a.png)
+![reaerve]()
 * Reserved cars
-![recerved cars](https://user-images.githubusercontent.com/83606182/206185517-5c083881-db73-4480-bdb3-4adc9b684782.png)
-![1](https://user-images.githubusercontent.com/83606182/206185658-7241af3e-4dd1-4f20-8087-aec33e8292af.png)
+![recerved cars]()
+![1]()
 
 ## Known Bugs
 * So far so good there are no bugs related to this project 😎
