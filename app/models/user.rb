@@ -9,6 +9,7 @@ class User < ApplicationRecord
     validate :validate_age
   
     has_many :reservations, dependent: :destroy
+    has_many :cars, through: :reservations
   
     def admin?
       role == 'admin'

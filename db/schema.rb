@@ -10,54 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_10_024218) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_11_110002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "application_records", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.string "car_type"
     t.string "brand"
-    t.float "fee_per_day"
     t.string "color"
     t.string "image"
+    t.float "fee_per_day"
     t.boolean "rented"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "jwt_denylist", force: :cascade do |t|
-    t.string "jti", null: false
-    t.datetime "exp", precision: nil, null: false
-    t.index ["jti"], name: "index_jwt_denylist_on_jti"
+  create_table "jwt_denylists", force: :cascade do |t|
+    t.string "jti"
+    t.datetime "exp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jti"], name: "index_jwt_denylists_on_jti"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.date "reservation_date"
     t.date "due_date"
+    t.integer "reserve_days"
+    t.integer "total_amount"
     t.bigint "car_id", null: false
+    t.bigint "reservations_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "reserve_days", default: 1
-    t.float "total_amount", default: 0.0
     t.index ["car_id"], name: "index_reservations_on_car_id"
+    t.index ["reservations_id"], name: "index_reservations_on_reservations_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: nil
-    t.datetime "remember_created_at", precision: nil
     t.string "name"
     t.string "photo"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.string "email"
+    t.string "encrypted_password"
+    t.datetime "remember_created_at"
     t.date "date_of_birth"
-    t.string "role", default: "user"
+    t.string "role"
+    t.string "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -65,4 +67,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_024218) do
   end
 
   add_foreign_key "reservations", "cars"
+  add_foreign_key "reservations", "reservations", column: "reservations_id"
+  add_foreign_key "reservations", "users"
 end

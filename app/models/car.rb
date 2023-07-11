@@ -4,4 +4,5 @@ class Car < ApplicationRecord
     validates :rented, inclusion: { in: [true, false] }
   
     has_many :reservations, dependent: :destroy
+    has_many :users, through: :reservations
 end
