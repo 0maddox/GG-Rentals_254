@@ -28,6 +28,9 @@ The following languages have been used on this project:
 * Back-end Repository: https://github.com/0maddox/GG-Rentals_254
 
 ## Some Screenshots
+open the imgs folder and check for samples
+
+
 * Homepage/login page
 ![login page]()
 * Latest Model Cars
