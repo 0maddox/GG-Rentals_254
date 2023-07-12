@@ -12,15 +12,25 @@ function App() {
     setOpen(!open);
   };
 
+  const skipPaths = ['/login', '/signup'];
+
+  const shouldSkip = skipPaths.includes(location.pathname);
+
   return (
     <div>
-      { (location.pathname !== '/' && location.pathname !== '/sign_up')
+      {!shouldSkip && (
+        <>
+          <MenuOpener open={open} toggleMenu={toggleMenu} />
+          <Navbar open={open} />
+        </>
+      )}
+      {/* {/* { (location.pathname !== '/' && location.pathname !== '/sign_up')
         && (
         <>
           <MenuOpener open={open} toggleMenu={toggleMenu} />
           <Navbar open={open} />
         </>
-        )}
+        )} */}
       <RouterConfig />
     </div>
   );

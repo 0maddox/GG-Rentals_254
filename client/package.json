@@ -1,5 +1,5 @@
 {
-  "name": "GG-rentals-254",
+  "name": "maddox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -74,5 +74,9 @@
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.21.0",
     "tailwindcss": "^3.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   }
 }

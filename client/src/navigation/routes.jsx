@@ -1,5 +1,5 @@
 // const BASE_URL = 'https://ezcar-backend.onrender.com';
- const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3000';
 const IMAGE_URL = 'https://ik.imagekit.io/ezcar';
 const LOG_IN = '/login';
 const LOG_OUT = '/logout';

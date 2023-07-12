@@ -1,4 +1,4 @@
-# Maks-rentals
+# GG Hires 254
 
 * Landing page for a car rental site
 Created By Nicholas Musau 
