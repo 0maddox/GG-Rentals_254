@@ -25,7 +25,9 @@ The following languages have been used on this project:
 
 * Live link: 
 
-* Back-end Repository: https://github.com/0maddox/GG-Rentals_254
+*front-end Repository-https://github.com/0maddox/GG-Rentals_254
+* Back-end Repository-https://github.com/0maddox/GG-api
+*  
 
 ## Some Screenshots
 open the imgs folder and check for samples
